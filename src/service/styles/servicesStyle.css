@@ -1,0 +1,43 @@
+.bg-img {
+    background: url("../../resource/images/bg.png") no-repeat 4px 5px;
+    padding-top: 120px;
+    background-size: 100% 100%;
+    width: 90%;
+    margin:40px auto 100px;
+    height: 800px;
+}
+
+
+.service-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 80%;
+    padding-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 600px;
+}
+
+
+.search-box {
+    width: 300px;
+    margin-left: 100px;
+}
+
+.result-display {
+    width: 600px;
+    font-size: 15px;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.upload-box {
+    margin: 50px 100px;
+}
+
+
+.file-button {
+    margin-top: 30px;
+
+}
+
+
