@@ -1,0 +1,8 @@
+.home-img {
+    background: url("../../resource/images/home.png") no-repeat 4px 5px;
+    /* padding-top: 120px; */
+    background-size: 100% 100%;
+    width: 80%;
+    margin:40px auto 100px;
+    height:700px;
+}

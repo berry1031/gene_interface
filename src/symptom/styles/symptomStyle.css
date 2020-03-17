@@ -1,0 +1,42 @@
+.diagnose-main-part {
+    background-color: rgb(240, 242, 245);
+    min-height:800px;
+    margin: 0px auto;
+    padding-top:40px;
+    padding-bottom:50px;
+
+}
+
+.select-symptom {
+    background-color: rgb(255, 255, 255);
+    min-height:220px;
+    margin: 20px auto;
+    width:80%;
+    padding: 50px;
+}
+
+.select-box {
+    margin-bottom: 20px;
+
+}
+
+.search-button {
+    margin-top: 50px;
+    margin-left:30px;
+
+}
+
+.symotom-hint {
+    margin-bottom: 20px;
+}
+
+
+
+.symptom-to-disease-result {
+    background-color: rgb(255, 255, 255);
+    min-height:600px;
+    margin:50px auto;
+    width:80%;
+    padding: 50px;
+
+}

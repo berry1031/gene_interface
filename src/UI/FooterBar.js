@@ -6,7 +6,7 @@ import './styles/footerBarStyle.css';
 const FooterBar = () => {
     return (
      
-    <div className='footer-bar'>这里是页脚</div>
+    <div className='footer-bar'></div>
 
     )
 }
