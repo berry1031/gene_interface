@@ -3,7 +3,7 @@ import { Redirect, Route,Switch } from 'react-router-dom';
 
 import Services from '../service/Services';
 import Symptom from '../symptom/Symptom';
-import SymptomDetail from '../symptom/SymptomDetail';
+import SymptomDetail from '../symptom/DiseaseDetail';
 import About from '../about/About';
 import Home from '../home/Home';
 import Login from '../enter/Login';

@@ -1,0 +1,20 @@
+.link-item {
+    color:#d8d7d7
+}
+
+.link-item:hover {
+    color:#fefefe;
+}
+
+
+.link-item:link {
+    color:#fefefe;
+}
+
+.link-span {
+    font-size:15px;
+}
+
+.side-bar-container {
+    padding-top: 30px;
+}

@@ -1,0 +1,53 @@
+
+export const OneDisease = () => {
+
+const oneDisease = {
+    "Heterogeneity": "None",
+    "Mapping": "H35.5",
+    "History": "None",
+    "Pathogenesis": "Disorder",
+    "TEXT": "Benign concentric annular macular dystrophy (BCAMD) is initially characterized by parafoveal hypopigmentation and good visual acuity, but progresses to a retinitis pigmentosa (RP)-like phenotype with a bull's eye configuration (van Lith-Verhoeven et al., 2004).",
+    "Cytogenetics": "None", "Cytogenetics": "None",
+    "Nomenclature": "None",
+    "Description": "Benign concentric annular macular dystrophy",
+    "Inheritance": "None",
+    "Location": "153870",
+    "Phenotype": "None",
+    "Diagnosis": "By linkage analysis in the Dutch family with BCAMD originally described by Deutman (1974), van Lith-Verhoeven et al. (2004) established complete segregation of the phenotype (maximum multipoint lod score, 3.8) with DNA markers at chromosome 6p12.3-q16. Recombination events defined a critical interval spanning 30.7 cM at the long arm of chromosome 6 between markers D6S269 and D6S300.",
+    "definition_orp": "Autosomal dominant",
+    "Etiology_orp": "None",
+    "Epidemiology_orp": "None",
+    "diease_name_orp": "None",
+    "Inheritance_orp": "None",
+    "GARD_orp": "None",
+    "MeSH_orp": "None",
+    "ORPHA_orp": "None",
+    "ICD-10_orp": "Childhood",
+    "UMLS_orp": "None",
+    "MedDRA_orp": "-",
+    "OMIM_orp": "None",
+    "Prevalence_orp": "None",
+    "Clinical_Management": "None",
+    "Molecular_Genetics": "None",
+    "Other_Features": "None",
+    "Animal_Model": "None",
+    "Phenotype__mapping_key": "None",
+    "Phenotype__MIM_number": "In a grandmother and her daughter, granddaughter, and grandson, Deutman (1974) described a benign concentric annular macular dystrophy. The affected persons showed a depigmented ring around an intact central area, not unlike the eyes in chloroquin retinopathy and cone dystrophy. All 4 had almost normal acuity. Deutman (1974) found no definite report of the same disorder, but raised the question that the kindred reported by Martyn and Walker (1971) might have had the same condition.*Coppeto and Ayazi (1982) observed wide variability in the affected members of 3 generations of a family: only dyschromatopsia in 6, dyschromatopsia and foveal hyperpigmentation in 1, and dyschromatopsia, foveal hyperpigmentation, and perifoveal circular pigment epithelial atrophy in 4. Normal findings on electrophysiologic testing suggested that this is a focal (macular) disorder rather than a generalized fundus disorder. No male-to-male transmission was observed.*In a 15-year follow-up of the family reported by Deutman (1974), van Lith-Verhoeven et al. (2004) found a more pronounced involvement of the peripheral retina together with increased photoreceptor cell dysfunction, as found in RP.",
+    "Biochemical_Features": "Benign concentric annular macular dystrophy (BCAMD) is a progressive autosomal dominant macular dystrophy characterized by parafoveal hypopigmentation followed by a retinitis pigmentosa-like phenotype (nyctalopia and peripheral vision loss) with a bull\u2019s eye configuration.",
+    "Clinical_Features": "None",
+    "Population_Genetics": "In affected members of a Dutch family with BCAMD mapping to chromosome 6p12.3-q16, van Lith-Verhoeven et al. (2004) screened for mutations in 5 candidate genes. They identified a mutation in the interphotoreceptor matrix proteoglycan-1 gene (IMPG1; 602870), a 1866T-C transition in exon 13, at nucleotide 1866 in exon 13, resulting in a leu579-to-pro substitution. The mutation was not found in 190 control individuals. However, the mutation was not predicted to have a major effect on the protein, and the authors stated that study of additional patients was necessary to establish the causality of the mutation.",
+    "Clinical_description_orp": "-",
+    "Antenatal_diagnosis_orp": "None",
+    "Differential_diagnosis_orp": "-",
+    "Genetic_counseling_orp": "None",
+    "Diagnostic_methods_orp": "None",
+    "Classification_level_orp": "None",
+    "Age_of_onset_orp": "9887",
+    "Gene_Locus": "251287",
+    "Gene_Locus__MIM_number": "<1 / 1 000 000",
+    "Genotype_Phenotype_Correlations": "None",
+    "Synonym_orp": "C1828210"
+}
+
+return oneDisease;
+}
