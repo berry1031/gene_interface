@@ -2,15 +2,14 @@ import React from 'react';
 import {
   Row, 
   Col,
-  List,
-  TreeSelect,
   Typography,
   Button, 
-  Tooltip
+  Tooltip,
+  Select
 } 
 from 'antd';
+import axios from 'axios';
 
-import {Link} from 'react-router-dom';
 
 import { SearchOutlined } from '@ant-design/icons';
 
@@ -42,28 +41,15 @@ import {
   Cellular_phenotype,
   Thoracic_cavity,
 } from '../symptom/components/OptionData';
-
+import {DiseaseInfo} from '../symptom/DiseaseInfo';
 
 import './styles/symptomStyle.css';
-
-
-import { Select } from 'antd';
 
 
 const { Option } = Select;
 const { Text } = Typography;
 
 
-
-  const data = [
-    '疾病A.................',
-    '疾病B.................',
-    'Australian walks 100km after outback crash.',
-    'Man charged over missing wedding girl.',
-    'Los Angeles battles huge wildfires.',
-    'Los Angeles battles huge wildfires.',
-    'Los Angeles battles huge wildfires.',
-  ];
   
   
 class Symptom extends React.Component {
@@ -74,13 +60,12 @@ class Symptom extends React.Component {
         this.state = {
           value:'',
           selectedItems: [],
-          OPTIONS:[]
+          OPTIONS:[],
+          diseases:[],
         };
 
     }
-  
-  
-   
+
   
     onClassifyChange  = (value) => {
       console.log(`selected ${value}`);
@@ -138,13 +123,21 @@ class Symptom extends React.Component {
         this.setState({OPTIONS: Thoracic_cavity()})
       }         
     }
-
-  
     
     handleSymptomChange = selectedItems => {
       this.setState({ selectedItems });
-      console.log(selectedItems);
     };
+
+
+    fetchDiseaseResult = () => {
+      const requestData = {"symptom":this.state.selectedItems}
+      console.log(JSON.stringify(requestData));
+      axios.post("http://mock-api.com/vKVpN6g8.mock/symptom/match",requestData)
+      .then(res=>res.data)
+      .then(diseases=>this.setState({diseases},()=>console.log(this.state.diseases)))
+      .catch(error=>console.error(error));
+
+    }
    
       
     render(){
@@ -152,10 +145,12 @@ class Symptom extends React.Component {
       const filteredOptions = this.state.OPTIONS.filter(o => !selectedItems.includes(o));
 
         return (
+          <div>
             <div className='diagnose-main-part'>
                 <div className='select-symptom'>
                   <div className="symotom-hint">
                     <Text strong>请选择相关症状</Text>
+
                   </div>
                   <Row gutter={24}>
                 <Col span={20}>
@@ -198,8 +193,7 @@ class Symptom extends React.Component {
                         <Option value="Thoracic_cavity">Thoracic cavity</Option>
                       </Select>             
                       </div>
-                    {/* </Col>
-                    <Col span={16}> */}
+            
                       <Select
                           mode="multiple"
                           placeholder="请选择您的症状"
@@ -218,32 +212,31 @@ class Symptom extends React.Component {
                     <Col span={2}>
                     <div className='search-button'>
                     <Tooltip title="search">
-                      <Button type="primary" shape="circle" icon={<SearchOutlined />} />
+                      <Button 
+                        type="primary" 
+                        shape="circle" 
+                        icon={<SearchOutlined />} 
+                        onClick ={this.fetchDiseaseResult}
+                      />
                     </Tooltip>
                     </div>
                     </Col>
                     </Row>
-
                   </div>
                     <div className='symptom-to-disease-result'>
-                      <h3 style={{ marginBottom: 16 }}>查询结果</h3>
-                      <Link to='/symptom/detail'>
-
-                        <List
-                          header={<div>匹配到的相关疾病</div>}
-                          footer={<div>Footer</div>}
-                          bordered
-                          dataSource={data}
-                          renderItem={item => (
-                            <List.Item>
-                              <Typography.Text mark>疾病</Typography.Text> {item}
-                            </List.Item>
-                          )}
+                    <Text strong>查询结果</Text>
+                    {this.state.diseases.map(disease=>(
+                      <DiseaseInfo
+                      to={`/disease/${disease}`}
+                      key={disease}
+                      disease={disease}
                       />
-                      </Link>
+                    ))} 
                     </div>
+				
+			
             </div>
-
+            </div>
           );
 
         

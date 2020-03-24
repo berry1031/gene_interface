@@ -22,3 +22,29 @@
 .site-layout .site-layout-background {
   background: #fff;
 }
+
+.login-button {
+  position: absolute;
+  right:150px;
+  color:rgb(55, 54, 54);
+}
+
+.register-button {
+  position: absolute;
+  right:100px;
+  color:rgb(55, 54, 54);
+}
+
+.phone-icon {
+  position: absolute;
+  right:50px;
+}
+
+.login-button:hover{ 
+  color:rgb(116, 113, 113);
+}
+
+.register-button:hover{ 
+  color:rgb(116, 113, 113);
+}
+

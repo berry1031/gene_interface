@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Form,
   Input,
   Tooltip,
-  Cascader,
   Select,
-  Row,
-  Col,
   Checkbox,
   Button,
-  AutoComplete,
 } from 'antd';
 import { QuestionCircleOutlined } from '@ant-design/icons';
 
@@ -17,7 +13,6 @@ import './styles/registerationFormStyle.css';
 
 
 const { Option } = Select;
-const AutoCompleteOption = AutoComplete.Option;
 
 
 const formItemLayout = {
@@ -59,7 +54,6 @@ const RegistrationForm = () => {
     </Form.Item>
   );
 
-  const [autoCompleteResult, setAutoCompleteResult] = useState([]);
 
 
 
@@ -71,7 +65,6 @@ const RegistrationForm = () => {
       name="register"
       onFinish={onFinish}
       initialValues={{
-        residence: ['zhejiang', 'hangzhou', 'xihu'],
         prefix: '86',
       }}
       scrollToFirstError
@@ -155,23 +148,6 @@ const RegistrationForm = () => {
         <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
       </Form.Item>
 
-
-      <Form.Item label="验证码">
-        <Row gutter={8}>
-          <Col span={12}>
-            <Form.Item
-              name="captcha"
-              noStyle
-              rules={[{ required: true, message: '请输入获取的验证码' }]}
-            >
-              <Input />
-            </Form.Item>
-          </Col>
-          <Col span={12}>
-            <Button>获取验证码</Button>
-          </Col>
-        </Row>
-      </Form.Item>
 
       <Form.Item name="agreement" valuePropName="checked" {...tailFormItemLayout}>
         <Checkbox>

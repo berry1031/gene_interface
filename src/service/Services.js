@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import { Segment } from 'semantic-ui-react';
 
-import { Row, Col } from 'antd';
-import { Input} from 'antd';
+import { 
+    Row, 
+    Col,
+    Input,
+    Upload, 
+    message, 
+    Button,
+    Modal,
+ } from 'antd';
+ 
 import axios from 'axios';
-import { Upload, message, Button} from 'antd';
-
-import { Alert, Modal ,Spin} from 'antd';
 
 import { UploadOutlined } from '@ant-design/icons';
 
-
-import ErrorMessage from '../UI/ErrorMessage';
 import 'semantic-ui-css/semantic.min.css';
 import './styles/servicesStyle.css';
 

@@ -1,0 +1,7 @@
+.file-upload-part {
+    background-color: rgb(255, 255, 255);
+    min-height:500px;
+    margin: 20px auto;
+    width:90%;
+    padding: 50px;
+}

@@ -6,7 +6,8 @@ import {
   HomeOutlined,
   CustomerServiceOutlined,
   FileSearchOutlined,
-  UploadOutlined
+  UploadOutlined,
+  ZoomInOutlined 
 } from '@ant-design/icons';
 
 import './styles/sideBarStyle.css';
@@ -35,31 +36,33 @@ class SideBar extends React.Component {
                 </Link>
               </Menu.Item>
               <SubMenu
-                key="/symptom/detail"
+                key="/gene"
                 title={
-                  <Link to='/symptom/detail' className='link-item'>
+                  <Link to='/gene' className='link-item'>
                     <span>
-                      <FileSearchOutlined className="link-span"/>
-                      <span> 疾病查询</span>
+                      <FileSearchOutlined className="link-span" style={{fontSize:'18px'}}/>
+                      <span> 基因查询</span>
                     </span>
                   </Link>
                 }
               >
-                <Menu.Item key="9">基因搜索</Menu.Item>
-                  <Menu.Item key="/symptom/detail">
-                  <Link to='/symptom/detail' className='link-item'>
-                    疾病搜索               
-                    </Link>
-                  </Menu.Item>
+                {/* <Menu.Item key="/">
+                  基因搜索
+                </Menu.Item> */}
+                <Menu.Item key="/gene">
+                  <Link to='/gene' className='link-item'>
+                    基因匹配疾病              
+                  </Link>
+                </Menu.Item>
               </SubMenu>
-              {/* <Menu.Item key="/service">
-                <Link to='/service' className='link-item'>
-                <FileSearchOutlined style={{fontSize:'18px'}}/>
+              <Menu.Item key="/disease">
+                <Link to='/disease' className='link-item'>
+                <ZoomInOutlined style={{fontSize:'18px'}}/>
                   <span className="link-span">
                     疾病查询
                   </span>
                 </Link>
-              </Menu.Item> */}
+              </Menu.Item>
               <Menu.Item key="/symptom">
                 <Link to='/symptom' className='link-item'>
                   <CustomerServiceOutlined style={{fontSize:'18px'}}/>
@@ -68,8 +71,8 @@ class SideBar extends React.Component {
                   </span>
                 </Link>
               </Menu.Item>
-              <Menu.Item key="/upload">
-                <Link to='/upload' className='link-item'>
+              <Menu.Item key="/file">
+                <Link to='/file' className='link-item'>
                   <UploadOutlined style={{fontSize:'18px'}}/>
                   <span className="link-span">
                     文件上传

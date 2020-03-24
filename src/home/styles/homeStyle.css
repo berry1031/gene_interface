@@ -1,8 +1,17 @@
-.home-img {
-    background: url("../../resource/images/home.png") no-repeat 4px 5px;
-    /* padding-top: 120px; */
-    background-size: 100% 100%;
-    width: 80%;
-    margin:40px auto 100px;
-    height:700px;
-}
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 160px;
+    line-height: 160px;
+    background: #364d79;
+    overflow: hidden;
+    min-height: 500px;
+  }
+  
+  .ant-carousel .slick-slide h3 {
+    color: #fff;
+  }
+
+
+  .home-container{
+      padding:100px;
+  }
