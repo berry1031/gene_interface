@@ -130,13 +130,26 @@ class Symptom extends React.Component {
 
 
     fetchDiseaseResult = () => {
-      const requestData = {"symptom":this.state.selectedItems}
-      console.log(JSON.stringify(requestData));
-      axios.post("http://mock-api.com/vKVpN6g8.mock/symptom/match",requestData)
-      .then(res=>res.data)
-      .then(diseases=>this.setState({diseases},()=>console.log(this.state.diseases)))
-      .catch(error=>console.error(error));
+      let formData = new FormData();
+      formData.append('symptoms',JSON.stringify(this.state.selectedItems));
+      fetch("http://161.189.10.25:4000/symptom2disease",{
+        method: 'POST',
+        body: formData,
+      }).then(res=> res.json())
+        .then(
+          // res=>console.log(res)
+          diseases=>this.setState({diseases},()=>console.log(this.state.diseases))
+        )
+        .catch(function(error) {
+            console.log('request failed: ', error);
+      })
+          
 
+     
+      // axios.post("http://mock-api.com/vKVpN6g8.mock/symptom/match",requestData)
+      // .then(res=>res.data)
+      // .then(diseases=>this.setState({diseases},()=>console.log(this.state.diseases)))
+      // .catch(error=>console.error(error));
     }
    
       
@@ -212,12 +225,15 @@ class Symptom extends React.Component {
                     <Col span={2}>
                     <div className='search-button'>
                     <Tooltip title="search">
+                    <form encType="multipart/form-data" action="">
                       <Button 
                         type="primary" 
                         shape="circle" 
                         icon={<SearchOutlined />} 
                         onClick ={this.fetchDiseaseResult}
                       />
+                    </form>
+
                     </Tooltip>
                     </div>
                     </Col>
@@ -226,10 +242,10 @@ class Symptom extends React.Component {
                     <div className='symptom-to-disease-result'>
                     <Text strong>查询结果</Text>
                     {this.state.diseases.map(disease=>(
-                      <DiseaseInfo
-                      to={`/disease/${disease}`}
-                      key={disease}
-                      disease={disease}
+                      <DiseaseInfo 
+                      to={`/disease/${disease.id}`}
+                      key={disease.id}
+                      disease={disease.name}
                       />
                     ))} 
                     </div>

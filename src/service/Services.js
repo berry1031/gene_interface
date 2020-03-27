@@ -181,12 +181,8 @@ export default class Services extends Component {
         return (
             
         <div>
-
-
             <div className="bg-img">
             {/* <Spin spinning={this.state.isLoading}> */}
-        
-    
                 <div className="service-container">
                     <div className="search-box">
                         <Row>
