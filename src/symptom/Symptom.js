@@ -62,6 +62,7 @@ class Symptom extends React.Component {
           selectedItems: [],
           OPTIONS:[],
           diseases:[],
+          isLoading: false,
         };
 
     }
@@ -132,24 +133,24 @@ class Symptom extends React.Component {
     fetchDiseaseResult = () => {
       let formData = new FormData();
       formData.append('symptoms',JSON.stringify(this.state.selectedItems));
-      fetch("http://161.189.10.25:4000/symptom2disease",{
+      this.setState({isLoading:true},()=>{
+        fetch("http://161.189.10.25:4000/symptom2disease",{
         method: 'POST',
         body: formData,
       }).then(res=> res.json())
         .then(
           // res=>console.log(res)
-          diseases=>this.setState({diseases},()=>console.log(this.state.diseases))
-        )
+          diseases=>{
+            this.setState({diseases})
+            this.setState({isLoading:false});
+          })
         .catch(function(error) {
             console.log('request failed: ', error);
+            this.setState({isLoading:false});
       })
           
-
-     
-      // axios.post("http://mock-api.com/vKVpN6g8.mock/symptom/match",requestData)
-      // .then(res=>res.data)
-      // .then(diseases=>this.setState({diseases},()=>console.log(this.state.diseases)))
-      // .catch(error=>console.error(error));
+    })
+  
     }
    
       
@@ -231,6 +232,8 @@ class Symptom extends React.Component {
                         shape="circle" 
                         icon={<SearchOutlined />} 
                         onClick ={this.fetchDiseaseResult}
+                        loading={this.state.isLoading}
+
                       />
                     </form>
 
